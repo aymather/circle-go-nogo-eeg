@@ -30,14 +30,15 @@ function [err, rt, resp, color, onset2change, color_change] = run_dots(settings,
             % Spin the Wheel :)
             if kk == 1
                 trialstart = ring(settings);
-                if settings.eeg == 1; EEGtrigger(2); end
             else
                 if kk > r
-                    if data.baseline == 0 && trialseq(it,id.stan) == 0
+                    if data.baseline == 0 && trialseq(it,id.stan) == 0 && flag1
                         color = settings.draw.dot.color_go;
-                    elseif data.baseline == 0 && trialseq(it,id.stan) == 1
+                        if settings.eeg == 1; EEGtrigger(trialseq(it, id.stan) + 10); end
+                    elseif data.baseline == 0 && trialseq(it,id.stan) == 1 && flag1
                         color = settings.draw.dot.color_nogo;
-                    else
+                        if settings.eeg == 1; EEGtrigger(trialseq(it, id.stan) + 10); end
+                    elseif data.baseline == 1 && flag1
                         color = settings.draw.dot.color_change;
                     end    
                     if flag == true && kk > r && flag1 == true
@@ -50,6 +51,7 @@ function [err, rt, resp, color, onset2change, color_change] = run_dots(settings,
                 DrawFormattedText(settings.screen.outwindow, '+', 'center', 'center', settings.layout.color.text);
                 Screen('FillOval',settings.screen.outwindow,color,[(spin.xspinner(kk)-settings.draw.dot.radius) (spin.yspinner(kk)-settings.draw.dot.radius) (spin.xspinner(kk)+settings.draw.dot.radius) (spin.yspinner(kk)+settings.draw.dot.radius)]);
                 Screen('Flip', settings.screen.outwindow);
+                if settings.eeg == 1 && kk == 2; EEGtrigger(200); end
                 WaitSecs(settings.dotTime/1000);
             end
 

@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
-%   University of Iowa, September 2018                            %  
+%   University of Iowa, September 2018                                    %  
 %   Program written by Alec Mather                                        %  
 %                                                                         %
 %   Psychtoolbox 3.0.12 / Matlab 2015a                                    %
@@ -12,7 +12,7 @@
 clear;clc     
 
 % MacOS Specific        
-Screen('Preference', 'SkipSyncTests', 1);   
+% Screen('Preference', 'SkipSyncTests', 1);   
     
 % GET PATH
 addpath(genpath(fileparts(which('CGNGEEG.m')))); 

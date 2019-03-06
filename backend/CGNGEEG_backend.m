@@ -18,7 +18,6 @@ function trialseq = CGNGEEG_backend(settings,data,id)
         iti = randi([800 1200],1,1)/1000;
 
         % Find random starting point
-%         r = randi([1 size(settings.ring.xunit,2)],1,1) + size(settings.ring.xunit,2);
         r = settings.rng(it);
         
         % Get random path length
