@@ -1,10 +1,10 @@
-function trialseq = CGNG_backend(settings,data,id)
+function trialseq = CGNGEEG_backend(settings,data,id)
 
     % TRIALSEQ
-    trialseq = CGNG_sequence(settings,data,id);
+    trialseq = CGNGEEG_sequence(settings,data,id);
 
     % INTRO
-    CGNG_intro(settings, trialseq, 1);
+    CGNGEEG_intro(settings, trialseq, 1);
     
     for it = 1:size(trialseq,1)
 
@@ -135,11 +135,11 @@ function trialseq = CGNG_backend(settings,data,id)
 
         % BLOCK BREAK
         if it == size(trialseq,1) || trialseq(it,id.block) ~= trialseq(it+1,id.block)
-            CGNG_blockfeedback(settings,trialseq,it,id,data)
+            CGNGEEG_blockfeedback(settings,trialseq,it,id,data)
         end
 
         if it == size(trialseq,1)
-            CGNG_outro(settings,trialseq,data)
+            CGNGEEG_outro(settings,trialseq,data)
         end
 
     end

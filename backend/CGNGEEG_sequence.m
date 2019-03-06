@@ -1,4 +1,4 @@
-function trialseq = CGNG_sequence(settings,data,id)
+function trialseq = CGNGEEG_sequence(settings,data,id)
 
 trialseq = [];
 col = length(fieldnames(id));

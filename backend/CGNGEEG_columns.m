@@ -1,4 +1,4 @@
-function id = CGNG_columns(data)
+function id = CGNGEEG_columns(data)
 
     if data.baseline == 0
         id.trialNum = 1;

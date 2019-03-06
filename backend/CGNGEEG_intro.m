@@ -1,4 +1,4 @@
-function CGNG_intro(settings, trialseq, it)
+function CGNGEEG_intro(settings, trialseq, it)
 
 % Block 1
 if it == 1

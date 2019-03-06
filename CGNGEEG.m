@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
-%   QiYang, University of Iowa, September 2018                            %  
+%   University of Iowa, September 2018                            %  
 %   Program written by Alec Mather                                        %  
 %                                                                         %
 %   Psychtoolbox 3.0.12 / Matlab 2015a                                    %
@@ -15,19 +15,19 @@ clear;clc
 Screen('Preference', 'SkipSyncTests', 1);   
     
 % GET PATH
-addpath(genpath(fileparts(which('CGNG.m')))); 
+addpath(genpath(fileparts(which('CGNGEEG.m')))); 
 
 % COLLECT DATA
-data = CGNG_data;     
+data = CGNGEEG_data;     
       
 % DATA COLUMNS
-id = CGNG_columns(data);        
+id = CGNGEEG_columns(data);        
 
 % SETTINGS          
-settings = CGNG_init(data);
+settings = CGNGEEG_init(data);
   
 % Go Through Trials
-trialseq = CGNG_backend(settings,data,id);       
+trialseq = CGNGEEG_backend(settings,data,id);       
  
 Screen('CloseAll');
 

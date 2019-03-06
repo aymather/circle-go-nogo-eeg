@@ -1,10 +1,13 @@
-function settings = CGNG_init(data)
+function settings = CGNGEEG_init(data)
 
 % Reset RNG
 rng(sum(100*clock),'twister');
 
 % Screen
 settings.screen.bg = [90 90 90];
+
+% eeg
+if data.eeg == 1; EEGtrigger(0); settings.eeg = 1; else settings.eeg = 0; end
 
 if data.baseline == 0
     % General
@@ -105,11 +108,11 @@ settings.spinTime = 1000;
 settings.dotTime = settings.spinTime/size(settings.ring.xunit,2);
 
 % Save
-settings.files.infolder = fileparts(which('CGNG.m'));
+settings.files.infolder = fileparts(which('CGNGEEG.m'));
 if data.baseline == 0
-    settings.files.outfolder = fullfile(fileparts(which('CGNG.m')),'out',filesep);
+    settings.files.outfolder = fullfile(fileparts(which('CGNGEEG.m')),'out',filesep);
 else
-    settings.files.outfolder = fullfile(fileparts(which('CGNG.m')),'baseline_out',filesep);
+    settings.files.outfolder = fullfile(fileparts(which('CGNGEEG.m')),'baseline_out',filesep);
 end
 clocktime = clock; hrs = num2str(clocktime(4)); mins = num2str(clocktime(5));
 settings.files.outfile = ['Subject_' num2str(data.nr) '_' date '_' hrs '.' mins 'h.mat'];

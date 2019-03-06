@@ -1,4 +1,4 @@
-function CGNG_blockfeedback(settings, trialseq, it, id, data)
+function CGNGEEG_blockfeedback(settings, trialseq, it, id, data)
 
     blocktrials = trialseq(trialseq(:,id.block) == trialseq(it,id.block),:);
 
@@ -22,7 +22,7 @@ function CGNG_blockfeedback(settings, trialseq, it, id, data)
 
         % Play countdown after ever block except last
         if it < size(trialseq,1)
-            CGNG_intro(settings, trialseq, it);
+            CGNGEEG_intro(settings, trialseq, it);
         end
     else
         % Collect stats
@@ -35,7 +35,7 @@ function CGNG_blockfeedback(settings, trialseq, it, id, data)
         
         % Play countdown after ever block except last
         if it < size(trialseq,1)
-            CGNG_intro(settings, trialseq, it);
+            CGNGEEG_intro(settings, trialseq, it);
         end
         
     end

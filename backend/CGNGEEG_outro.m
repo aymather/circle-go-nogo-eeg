@@ -1,4 +1,4 @@
-function CGNG_outro(settings,trialseq,data)
+function CGNGEEG_outro(settings,trialseq,data)
 
 % Draw to window
 DrawFormattedText(settings.screen.outwindow, 'Thanks For Participating!', 'center', 'center', settings.layout.color.text);

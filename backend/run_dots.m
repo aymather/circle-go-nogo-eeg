@@ -30,6 +30,7 @@ function [err, rt, resp, color, onset2change, color_change] = run_dots(settings,
             % Spin the Wheel :)
             if kk == 1
                 trialstart = ring(settings);
+                if settings.eeg == 1; EEGtrigger(2); end
             else
                 if kk > r
                     if data.baseline == 0 && trialseq(it,id.stan) == 0

@@ -1,9 +1,10 @@
-function data = CGNG_data
+function data = CGNGEEG_data
 
 disp('Welcome to our Experiment!');
 data.nr = input('Subject Number: ');
 data.training = input('Training?: (0/1) ');
 data.baseline = input('Memory Baseline? (0/1): ');
+data.eeg = input('EEG? (0/1): ');
 if data.baseline == 0
     data.colors = input('Colors? (0/1): ');
 end
